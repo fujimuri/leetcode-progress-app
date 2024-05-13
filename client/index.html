@@ -3,11 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Leetcode Progress App</title>
+    <title>Leetcode Progress Tracking App</title>
+    <script src="https://unpkg.com/htmx.org@1.9.12"
+    integrity="sha384-ujb1lZYygJmzgSwoxRggbCHcjc0rB2XoQrxeTUQyRjrOnlCoYta87iKBWq3EsdM2"
+    crossorigin="anonymous"></script>
 </head>
-<body>
-    <form>
 
-    </form>
+<body>
+    <h1>
+        Leetcode Progress Tracking App
+    </h1>
+    <p>
+        Choose a Leetcode question list.
+    </p>
+    <div>
+        <select
+        name="question-list-select"
+        hx-get="http://127.0.0.1:5000/question-lists"
+        hx-target="#question-list"
+        >
+            <option value="blind-75">
+                Blind 75
+            </option>
+            <option value="grind-75">
+                Grind 75
+            </option>
+            <option value="neetcode-150">
+                Neetcode 150
+            </option>
+        </select>
+    </div>
+
+    <div>
+        <ol id="question-list"></ol>
+    </div>
+
 </body>
 </html>
+
+<!-- http://127.0.0.1:5000/ is the server address
+for now-->
