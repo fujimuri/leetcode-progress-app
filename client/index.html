@@ -14,7 +14,7 @@
         Leetcode Progress Tracking App
     </h1>
     <p>
-        Choose a Leetcode question list.
+        Choose a Leetcode question list below.
     </p>
     <div>
         <select
@@ -22,6 +22,9 @@
         hx-get="http://127.0.0.1:5000/question-lists"
         hx-target="#question-list"
         >
+            <option value="" selected disabled>
+                Select Question List
+            </option>
             <option value="blind-75">
                 Blind 75
             </option>
@@ -35,7 +38,7 @@
     </div>
 
     <div>
-        <ol id="question-list"></ol>
+        <ul style="list-style: none" id="question-list"></ul>
     </div>
 
 </body>
