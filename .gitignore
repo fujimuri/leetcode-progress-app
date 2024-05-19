@@ -1,3 +1,4 @@
 gato.db
 server/venv/
 *.pyc
+db-files/*
