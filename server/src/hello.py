@@ -23,6 +23,8 @@ def get_question_list():
     if list_name == 'neetcode-150':
          return createHTMLForQuestionList("Neetcode 150")
          # return '<li><input type="checkbox">3Sum</li>'
+    if list_name == "blind-75":
+          return createHTMLForQuestionList("Blind 75")
     else:
          return '<li><input type="checkbox">Sudoku</li>'
 
