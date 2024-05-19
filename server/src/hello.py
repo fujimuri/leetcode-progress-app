@@ -1,7 +1,6 @@
 from flask import Flask
 from flask import request
 from flask_cors import CORS
-from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
 CORS(app)
@@ -9,12 +8,11 @@ CORS(app)
 # can allow specific cors later:
 # https://flask-cors.readthedocs.io/en/3.0.10/
 
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///mydatabase.db'
-db = SQLAlchemy(app)
+# disable tracking to use less memory
 
 @app.route('/')
 def hello():
-	return 'meow'
+     return 'meow'
 
 @app.route('/question-lists', methods=['GET'])
 def get_question_list():
@@ -38,3 +36,4 @@ def createHTMLForQuestionList(question_list):
 
 if __name__ == '__main__':
     app.run(debug=True)
+    
