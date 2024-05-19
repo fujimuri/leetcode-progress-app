@@ -2,6 +2,7 @@ from flask import Flask
 from flask import request
 from flask_cors import CORS
 import sqlite3
+import os
 
 
 app = Flask(__name__)
@@ -25,12 +26,14 @@ def get_question_list():
     else:
          return '<li><input type="checkbox">Sudoku</li>'
 
+basedir = os.path.abspath(os.path.dirname(__file__))
+database_path = os.path.join(basedir, '../../gato.db')
 
 def createHTMLForQuestionList(question_list_name):
      # step 1: find the questions in the db for
      # this list name
      # connect to SQLite db
-     con = sqlite3.connect('/home/fujimuri/leetcode-progress-app/gato.db')
+     con = sqlite3.connect(database_path)
      # the returned connection object represents
      # the connecton to the on-disk db.
      cur = con.cursor()
